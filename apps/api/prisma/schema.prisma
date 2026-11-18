@@ -1,0 +1,263 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum UserRole {
+  CONSUMER
+  BROKER
+  ADMIN
+}
+
+enum RiskLevel {
+  LOW
+  MEDIUM
+  HIGH
+  VERY_HIGH
+}
+
+enum PropertyType {
+  HOUSE
+  APARTMENT
+}
+
+model User {
+  id           String   @id @default(uuid())
+  email        String   @unique
+  passwordHash String   @map("password_hash")
+  name         String
+  role         UserRole @default(CONSUMER)
+  phone        String?
+  cpf          String?
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+
+  quotes        Quote[]
+  payments      Payment[]
+  policies      Policy[]
+  brokerProfile BrokerProfile?
+  leads         Lead[]         @relation("BrokerLeads")
+  referrals     Referral[]
+  commissions   Commission[]
+
+  @@map("users")
+}
+
+model RiskData {
+  id               String    @id @default(uuid())
+  cep              String    @unique
+  city             String
+  state            String
+  neighborhood     String?
+  riskLevel        RiskLevel @map("risk_level")
+  riskTypes        String[]  @map("risk_types")
+  avgDamage        Decimal   @map("avg_damage") @db.Decimal(12, 2)
+  incidentCount12m Int       @map("incident_count_12m")
+  lastUpdated      DateTime  @map("last_updated")
+  isApproximate    Boolean   @default(false) @map("is_approximate")
+
+  @@index([city, state])
+  @@index([riskLevel])
+  @@map("risk_data")
+}
+
+model Quote {
+  id              String       @id @default(uuid())
+  userId          String?      @map("user_id")
+  cep             String
+  riskLevel       RiskLevel    @map("risk_level")
+  providerName    String       @map("provider_name")
+  planName        String       @map("plan_name")
+  monthlyPremium  Decimal      @map("monthly_premium") @db.Decimal(10, 2)
+  coverageAmount  Decimal      @map("coverage_amount") @db.Decimal(12, 2)
+  coverageDetails Json         @map("coverage_details")
+  propertyType    PropertyType @map("property_type")
+  propertyValue   Decimal      @map("property_value") @db.Decimal(12, 2)
+  validUntil      DateTime     @map("valid_until")
+  referralCode    String?      @map("referral_code")
+  createdAt       DateTime     @default(now()) @map("created_at")
+
+  user     User?    @relation(fields: [userId], references: [id])
+  payment  Payment?
+  policy   Policy?
+
+  @@index([userId])
+  @@index([referralCode])
+  @@map("quotes")
+}
+
+enum PaymentMethod {
+  PIX
+  CARD
+}
+
+enum PaymentStatus {
+  PENDING
+  PAID
+  FAILED
+  REFUNDED
+}
+
+model Payment {
+  id           String        @id @default(uuid())
+  userId       String        @map("user_id")
+  quoteId      String        @unique @map("quote_id")
+  method       PaymentMethod
+  amount       Decimal       @db.Decimal(10, 2)
+  status       PaymentStatus @default(PENDING)
+  gatewayId    String?       @map("gateway_id")
+  pixCode      String?       @map("pix_code")
+  pixQrCode    String?       @map("pix_qr_code")
+  paidAt       DateTime?     @map("paid_at")
+  createdAt    DateTime      @default(now()) @map("created_at")
+
+  user   User   @relation(fields: [userId], references: [id])
+  quote  Quote  @relation(fields: [quoteId], references: [id])
+  policy Policy?
+
+  @@index([userId])
+  @@index([status])
+  @@map("payments")
+}
+
+enum PolicyStatus {
+  ACTIVE
+  CANCELLED
+  EXPIRED
+  SUSPENDED
+}
+
+model Policy {
+  id               String       @id @default(uuid())
+  userId           String       @map("user_id")
+  quoteId          String       @unique @map("quote_id")
+  paymentId        String       @unique @map("payment_id")
+  policyNumber     String       @unique @map("policy_number")
+  providerPolicyId String?      @map("provider_policy_id")
+  status           PolicyStatus @default(ACTIVE)
+  startDate        DateTime     @map("start_date")
+  endDate          DateTime     @map("end_date")
+  coverageDetails  Json         @map("coverage_details")
+  monthlyPremium   Decimal      @map("monthly_premium") @db.Decimal(10, 2)
+  createdAt        DateTime     @default(now()) @map("created_at")
+
+  user    User    @relation(fields: [userId], references: [id])
+  quote   Quote   @relation(fields: [quoteId], references: [id])
+  payment Payment @relation(fields: [paymentId], references: [id])
+
+  @@index([userId])
+  @@index([status])
+  @@index([policyNumber])
+  @@map("policies")
+}
+
+enum BrokerStatus {
+  PENDING
+  ACTIVE
+  SUSPENDED
+}
+
+model BrokerProfile {
+  id                String       @id @default(uuid())
+  userId            String       @unique @map("user_id")
+  susepRegistration String       @map("susep_registration")
+  companyName       String?      @map("company_name")
+  cnpj              String?
+  region            String?
+  status            BrokerStatus @default(PENDING)
+  verifiedAt        DateTime?    @map("verified_at")
+  createdAt         DateTime     @default(now()) @map("created_at")
+
+  user User @relation(fields: [userId], references: [id])
+
+  @@map("broker_profiles")
+}
+
+enum LeadStatus {
+  NEW
+  CONTACTED
+  CONVERTED
+  LOST
+}
+
+model Lead {
+  id            String     @id @default(uuid())
+  brokerId      String     @map("broker_id")
+  consumerName  String     @map("consumer_name")
+  consumerEmail String     @map("consumer_email")
+  consumerPhone String?    @map("consumer_phone")
+  cep           String
+  riskLevel     RiskLevel  @map("risk_level")
+  status        LeadStatus @default(NEW)
+  source        String?
+  notes         String?
+  createdAt     DateTime   @default(now()) @map("created_at")
+
+  broker User @relation("BrokerLeads", fields: [brokerId], references: [id])
+
+  @@index([brokerId])
+  @@index([status])
+  @@map("leads")
+}
+
+model Referral {
+  id               String   @id @default(uuid())
+  brokerId         String   @map("broker_id")
+  code             String   @unique
+  clicks           Int      @default(0)
+  quotesGenerated  Int      @default(0) @map("quotes_generated")
+  salesCompleted   Int      @default(0) @map("sales_completed")
+  createdAt        DateTime @default(now()) @map("created_at")
+
+  broker User @relation(fields: [brokerId], references: [id])
+
+  @@index([brokerId])
+  @@map("referrals")
+}
+
+enum CommissionStatus {
+  PENDING
+  PAID
+}
+
+model Commission {
+  id         String           @id @default(uuid())
+  brokerId   String           @map("broker_id")
+  policyId   String           @map("policy_id")
+  amount     Decimal          @db.Decimal(10, 2)
+  percentage Decimal          @db.Decimal(5, 2)
+  status     CommissionStatus @default(PENDING)
+  paidAt     DateTime?        @map("paid_at")
+  createdAt  DateTime         @default(now()) @map("created_at")
+
+  broker User @relation(fields: [brokerId], references: [id])
+
+  @@index([brokerId])
+  @@index([status])
+  @@map("commissions")
+}
+
+enum EmailStatus {
+  SENT
+  FAILED
+}
+
+model EmailLog {
+  id         String      @id @default(uuid())
+  userId     String?     @map("user_id")
+  templateId String      @map("template_id")
+  toEmail    String      @map("to_email")
+  subject    String
+  status     EmailStatus @default(SENT)
+  attempts   Int         @default(1)
+  sentAt     DateTime?   @map("sent_at")
+  createdAt  DateTime    @default(now()) @map("created_at")
+
+  @@index([userId])
+  @@index([templateId])
+  @@map("email_logs")
+}
