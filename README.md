@@ -457,7 +457,7 @@ Base URL: `http://localhost:3001/api`
 
 ```bash
 # 1. Clone o repositorio
-git clone https://github.com/inematds/seg360.git
+git clone https://github.com/linnoff88-dev/seg360.git
 cd seg360
 
 # 2. Instale as dependencias

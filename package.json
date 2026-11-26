@@ -18,15 +18,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/inematds/seg360.git"
+    "url": "git+https://github.com/linnoff88-dev/seg360.git"
   },
   "keywords": ["insurance", "marketplace", "calamidades"],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/inematds/seg360/issues"
+    "url": "https://github.com/linnoff88-dev/seg360/issues"
   },
-  "homepage": "https://github.com/inematds/seg360#readme",
+  "homepage": "https://github.com/linnoff88-dev/seg360#readme",
   "devDependencies": {
     "bmad-method": "^4.44.3",
     "eslint": "^8.57.0",

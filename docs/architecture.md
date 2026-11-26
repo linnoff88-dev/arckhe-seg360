@@ -1093,7 +1093,7 @@ docker-compose >= 2.x
 ### Initial Setup
 
 ```bash
-git clone https://github.com/inematds/seg360.git
+git clone https://github.com/linnoff88-dev/seg360.git
 cd seg360
 npm install
 cp .env.example .env

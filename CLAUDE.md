@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **Seg360** is a Brazilian insurance marketplace platform specializing in calamity/disaster insurance (enchente, deslizamento, vendaval, granizo). The project is in early planning phase — no application code exists yet. Business documents are written in Portuguese (pt-BR).
 
-Repository: `github.com/inematds/seg360`
+Repository: `github.com/linnoff88-dev/seg360`
 
 ## Development Methodology: BMad Method
 

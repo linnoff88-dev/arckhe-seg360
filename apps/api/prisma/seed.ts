@@ -5,16 +5,16 @@ const prisma = new PrismaClient();
 
 async function main() {
   // Admin user
-  const adminEmail = 'admin@seg360.com.br';
+  const admARCKHÉil = 'admin@seg360.com.br';
   const existing = await prisma.user.findUnique({
-    where: { email: adminEmail },
+    where: { email: admARCKHÉil },
   });
 
   if (!existing) {
     const passwordHash = await bcrypt.hash('Admin123!', 10);
     await prisma.user.create({
       data: {
-        email: adminEmail,
+        email: admARCKHÉil,
         passwordHash,
         name: 'Administrador Seg360',
         role: 'ADMIN',
