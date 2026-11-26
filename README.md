@@ -1,8 +1,8 @@
-﻿<p align="center">
-  <img src="docs/seg360-banner.png" alt="Seg360 â€” Seguros contra Desastres no Brasil" width="800" />
+ï»¿<p align="center">
+  <img src="docs/seg360-banner.png" alt="Seg360 ê¢â¬â Seguros contra Desastres no Brasil" width="800" />
 </p>
 
-<h1 align="center">Seg360 â€” Marketplace de Seguros contra Calamidades</h1>
+<h1 align="center">Seg360 ê¢â¬â Marketplace de Seguros contra Calamidades</h1>
 
 <p align="center">
   <strong>Protecao acessivel contra enchentes, deslizamentos, vendavais e granizo para o Brasil.</strong>
@@ -33,7 +33,7 @@
 - [Tech Stack](#tech-stack)
 - [Estrutura do Projeto](#estrutura-do-projeto)
 - [Modelos de Dados](#modelos-de-dados)
-- [API â€” Endpoints](#api--endpoints)
+- [API ê¢â¬â Endpoints](#api--endpoints)
 - [Setup Local](#setup-local)
 - [Scripts Disponiveis](#scripts-disponiveis)
 - [Testes](#testes)
@@ -48,7 +48,7 @@
 
 **Seg360** e o primeiro marketplace brasileiro especializado em seguros contra calamidades naturais. A plataforma conecta consumidores, corretores de seguros e seguradoras/insurtechs em um ecossistema digital focado em educacao sobre risco, cotacao instantanea e contratacao 100% online.
 
-O nome "Seg360" representa a visao de **protecao 360 graus** contra desastres naturais â€” cobrindo todos os tipos de risco (enchente, deslizamento, vendaval, granizo) em todas as regioes do Brasil.
+O nome "Seg360" representa a visao de **protecao 360 graus** contra desastres naturais ê¢â¬â cobrindo todos os tipos de risco (enchente, deslizamento, vendaval, granizo) em todas as regioes do Brasil.
 
 ---
 
@@ -66,7 +66,7 @@ O Brasil enfrenta uma crise crescente de desastres naturais com protecao de segu
 
 ### Por que as solucoes atuais falham
 
-1. **Cobertura de enchente nao vem no plano basico** â€” precisa ser contratada a parte e a maioria desconhece
+1. **Cobertura de enchente nao vem no plano basico** ê¢â¬â precisa ser contratada a parte e a maioria desconhece
 2. **Vieses cognitivos** impedem a compra: otimismo ("nao vai acontecer comigo"), aversao a perda, inercia
 3. **Processo burocratico**: contratacao complexa, linguagem tecnica, dependencia de corretor presencial
 4. **Percepcao errada de preco**: consumidores acham que custa como seguro de carro, quando custa R$15-50/mes
@@ -82,7 +82,7 @@ Seg360 se diferencia por:
 - **Comparador de Coberturas**: Mostra claramente o que cada apolice cobre e o que NAO cobre, com linguagem simples
 - **Cotacao em 60 segundos**: Processo 100% digital, wizard de 3 passos, sem burocracia
 - **Micro-seguros acessiveis**: Planos a partir de R$9,90/mes via Pix, modelo assinatura sem fidelidade
-- **Plataforma de Corretores**: Leads quentes, links de referencia, comissoes de 30-40% â€” um nicho lucrativo para corretores diversificarem carteira
+- **Plataforma de Corretores**: Leads quentes, links de referencia, comissoes de 30-40% ê¢â¬â um nicho lucrativo para corretores diversificarem carteira
 
 ---
 
@@ -122,7 +122,7 @@ Seg360 se diferencia por:
 | Funcionalidade | Descricao |
 |----------------|-----------|
 | Autenticacao JWT | Access token (15min) + refresh token (7d), bcrypt, rate limiting |
-| Perfis (RBAC) | Consumidor, Corretor, Admin â€” com guards e navegacao condicional |
+| Perfis (RBAC) | Consumidor, Corretor, Admin ê¢â¬â com guards e navegacao condicional |
 | Email Notifications | 6 templates HTML responsivos: registro, boas-vindas corretor, confirmacao apolice, renovacao, cancelamento, novo lead |
 | Landing Page SEO | Hero, stats, "Como Funciona", FAQ, footer, meta tags, Open Graph |
 | Paginas SEO Regionais | 10 paginas SSG por estado/cidade com JSON-LD e breadcrumbs |
@@ -134,7 +134,7 @@ Seg360 se diferencia por:
 
 ### Consumidores (B2C)
 
-Proprietarios ou inquilinos de imoveis em regioes com historico de enchente, deslizamento ou vendaval â€” especialmente RS, litoral SP/RJ, BA, MG, SC. Pessoas que nao sabem que a cobertura de enchente e separada do seguro residencial e que desconhecem opcoes acessiveis.
+Proprietarios ou inquilinos de imoveis em regioes com historico de enchente, deslizamento ou vendaval ê¢â¬â especialmente RS, litoral SP/RJ, BA, MG, SC. Pessoas que nao sabem que a cobertura de enchente e separada do seguro residencial e que desconhecem opcoes acessiveis.
 
 ### Corretores de Seguros (B2B)
 
@@ -149,17 +149,17 @@ Seguradoras que oferecem produtos de seguro residencial/calamidade (Simple2u, 88
 ## Modelo de Negocio
 
 ```
-Consumidor â”€â”€compraâ”€â”€> Seg360 â”€â”€distribuiâ”€â”€> Insurtech/Seguradora
+Consumidor ê¢ââ¬ê¢ââ¬compraê¢ââ¬ê¢ââ¬> Seg360 ê¢ââ¬ê¢ââ¬distribuiê¢ââ¬ê¢ââ¬> Insurtech/Seguradora
                          |
                     Take Rate (%)
                          |
-              Corretor â†â”€â”€comissao (30-40%)
+              Corretor ê¢â Âê¢ââ¬ê¢ââ¬comissao (30-40%)
 ```
 
-- **Modelo**: Embedded Insurance via API â€” Seg360 distribui produtos de seguradoras parceiras
+- **Modelo**: Embedded Insurance via API ê¢â¬â Seg360 distribui produtos de seguradoras parceiras
 - **Receita**: Take rate sobre cada venda (porcentagem do premio mensal)
 - **Pagamento**: Assinatura mensal sem fidelidade, via Pix ou cartao
-- **Split**: Plataforma retÃ©m comissao, repassa parcela ao corretor (quando aplicavel)
+- **Split**: Plataforma retêÂ©m comissao, repassa parcela ao corretor (quando aplicavel)
 
 ---
 
@@ -180,12 +180,12 @@ Consumidor â”€â”€compraâ”€â”€> Seg360 â”€â”€distri
 
 ### KPIs Monitorados
 
-- **GMV** (Gross Merchandise Value) â€” Volume total de premios vendidos
-- **Take Rate** â€” % retida pela plataforma
-- **CAC** â€” Custo de aquisicao por cliente
-- **LTV** â€” Valor do cliente ao longo do tempo
-- **Churn Rate** â€” Taxa de cancelamento mensal
-- **Corretores Ativos** â€” Com pelo menos 1 venda/mes
+- **GMV** (Gross Merchandise Value) ê¢â¬â Volume total de premios vendidos
+- **Take Rate** ê¢â¬â % retida pela plataforma
+- **CAC** ê¢â¬â Custo de aquisicao por cliente
+- **LTV** ê¢â¬â Valor do cliente ao longo do tempo
+- **Churn Rate** ê¢â¬â Taxa de cancelamento mensal
+- **Corretores Ativos** ê¢â¬â Com pelo menos 1 venda/mes
 
 ---
 
@@ -194,32 +194,32 @@ Consumidor â”€â”€compraâ”€â”€> Seg360 â”€â”€distri
 ### Visao Geral
 
 ```
-                    â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
-                    â”‚   Consumidor    â”‚
-                    â”‚    Browser      â”‚
-                    â””â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”˜
-                             â”‚
-                    â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â–¼â”€â”€â”€â”€â”€â”€â”€â”€â”
-                    â”‚  Next.js 14     â”‚  â† Vercel (SSR/SSG/CSR)
-                    â”‚  App Router     â”‚
-                    â”‚  Tailwind CSS   â”‚
-                    â”‚  Zustand        â”‚
-                    â””â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”˜
-                             â”‚ REST API
-                    â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â–¼â”€â”€â”€â”€â”€â”€â”€â”€â”
-                    â”‚  NestJS 10      â”‚  â† AWS ECS / Railway
-                    â”‚  10 Modulos     â”‚
-                    â”‚  JWT + Guards   â”‚
-                    â””â”€â”€â”¬â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”¬â”€â”€â”€â”˜
-                       â”‚     â”‚    â”‚
-              â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â–¼â” â”Œâ”€â”€â–¼â”€â”€â” â”Œâ–¼â”€â”€â”€â”€â”€â”€â”€â”€â”
-              â”‚PostgreSQLâ”‚ â”‚Redisâ”‚ â”‚ APIs     â”‚
-              â”‚  Prisma  â”‚ â”‚Cacheâ”‚ â”‚ Externas â”‚
-              â”‚ 11 modelsâ”‚ â”‚     â”‚ â”‚          â”‚
-              â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜ â””â”€â”€â”€â”€â”€â”˜ â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
-                                    â”œâ”€ ViaCEP
-                                    â”œâ”€ Insurtechs
-                                    â””â”€ Payment Gateway
+                    ê¢âÅê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢âÂ
+                    ê¢ââ   Consumidor    ê¢ââ
+                    ê¢ââ    Browser      ê¢ââ
+                    ê¢ââê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢âÂ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢âË
+                             ê¢ââ
+                    ê¢âÅê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢âÂ¼ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢âÂ
+                    ê¢ââ  Next.js 14     ê¢ââ  ê¢â Â Vercel (SSR/SSG/CSR)
+                    ê¢ââ  App Router     ê¢ââ
+                    ê¢ââ  Tailwind CSS   ê¢ââ
+                    ê¢ââ  Zustand        ê¢ââ
+                    ê¢ââê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢âÂ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢âË
+                             ê¢ââ REST API
+                    ê¢âÅê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢âÂ¼ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢âÂ
+                    ê¢ââ  NestJS 10      ê¢ââ  ê¢â Â AWS ECS / Railway
+                    ê¢ââ  10 Modulos     ê¢ââ
+                    ê¢ââ  JWT + Guards   ê¢ââ
+                    ê¢ââê¢ââ¬ê¢ââ¬ê¢âÂ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢âÂ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢âÂ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢âË
+                       ê¢ââ     ê¢ââ    ê¢ââ
+              ê¢âÅê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢âÂ¼ê¢âÂ ê¢âÅê¢ââ¬ê¢ââ¬ê¢âÂ¼ê¢ââ¬ê¢ââ¬ê¢âÂ ê¢âÅê¢âÂ¼ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢âÂ
+              ê¢ââPostgreSQLê¢ââ ê¢ââRedisê¢ââ ê¢ââ APIs     ê¢ââ
+              ê¢ââ  Prisma  ê¢ââ ê¢ââCacheê¢ââ ê¢ââ Externas ê¢ââ
+              ê¢ââ 11 modelsê¢ââ ê¢ââ     ê¢ââ ê¢ââ          ê¢ââ
+              ê¢ââê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢âË ê¢ââê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢âË ê¢ââê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢âË
+                                    ê¢âÅê¢ââ¬ ViaCEP
+                                    ê¢âÅê¢ââ¬ Insurtechs
+                                    ê¢ââê¢ââ¬ Payment Gateway
 ```
 
 ### Padroes Arquiteturais
@@ -260,70 +260,70 @@ Consumidor â”€â”€compraâ”€â”€> Seg360 â”€â”€distri
 
 ```
 seg360/
-â”œâ”€â”€ apps/
-â”‚   â”œâ”€â”€ web/                        # Frontend Next.js 14 (porta 3000)
-â”‚   â”‚   â”œâ”€â”€ src/
-â”‚   â”‚   â”‚   â”œâ”€â”€ app/                # App Router â€” 15 rotas
-â”‚   â”‚   â”‚   â”‚   â”œâ”€â”€ page.tsx        # Landing page (SSR)
-â”‚   â”‚   â”‚   â”‚   â”œâ”€â”€ simulador/      # Simulador de risco por CEP
-â”‚   â”‚   â”‚   â”‚   â”œâ”€â”€ risco/          # Paginas SEO regionais (SSG)
-â”‚   â”‚   â”‚   â”‚   â”œâ”€â”€ cotacao/        # Wizard + comparador
-â”‚   â”‚   â”‚   â”‚   â”œâ”€â”€ checkout/       # Pagamento (Pix/Cartao)
-â”‚   â”‚   â”‚   â”‚   â”œâ”€â”€ confirmacao/    # Confirmacao de apolice
-â”‚   â”‚   â”‚   â”‚   â”œâ”€â”€ painel/         # Dashboard consumidor
-â”‚   â”‚   â”‚   â”‚   â”œâ”€â”€ corretor/       # Dashboard corretor
-â”‚   â”‚   â”‚   â”‚   â”œâ”€â”€ admin/          # Painel administrativo
-â”‚   â”‚   â”‚   â”‚   â”œâ”€â”€ login/          # Login
-â”‚   â”‚   â”‚   â”‚   â”œâ”€â”€ cadastro/       # Registro
-â”‚   â”‚   â”‚   â”‚   â””â”€â”€ perfil/         # Perfil do usuario
-â”‚   â”‚   â”‚   â”œâ”€â”€ components/         # Componentes React
-â”‚   â”‚   â”‚   â”œâ”€â”€ services/           # API client layer (axios)
-â”‚   â”‚   â”‚   â”œâ”€â”€ stores/             # Zustand (auth, quote)
-â”‚   â”‚   â”‚   â””â”€â”€ lib/                # Utilitarios
-â”‚   â”‚   â”œâ”€â”€ tailwind.config.ts
-â”‚   â”‚   â””â”€â”€ package.json
-â”‚   â”‚
-â”‚   â””â”€â”€ api/                        # Backend NestJS 10 (porta 3001)
-â”‚       â”œâ”€â”€ src/
-â”‚       â”‚   â”œâ”€â”€ common/             # Guards, decorators, filters
-â”‚       â”‚   â”‚   â”œâ”€â”€ guards/         # JwtAuthGuard, RolesGuard
-â”‚       â”‚   â”‚   â””â”€â”€ decorators/     # @Public(), @Roles(), @CurrentUser()
-â”‚       â”‚   â”œâ”€â”€ modules/            # 10 modulos de negocio
-â”‚       â”‚   â”‚   â”œâ”€â”€ health/         # GET /api/health
-â”‚       â”‚   â”‚   â”œâ”€â”€ auth/           # Register, login, refresh
-â”‚       â”‚   â”‚   â”œâ”€â”€ user/           # Perfil do usuario
-â”‚       â”‚   â”‚   â”œâ”€â”€ risk/           # Simulador de risco por CEP
-â”‚       â”‚   â”‚   â”œâ”€â”€ quotation/      # Motor de cotacao
-â”‚       â”‚   â”‚   â”œâ”€â”€ payment/        # Pagamentos (Pix/Cartao)
-â”‚       â”‚   â”‚   â”œâ”€â”€ policy/         # Emissao de apolices
-â”‚       â”‚   â”‚   â”œâ”€â”€ broker/         # Plataforma do corretor
-â”‚       â”‚   â”‚   â”œâ”€â”€ admin/          # Painel administrativo
-â”‚       â”‚   â”‚   â””â”€â”€ email/          # Notificacoes (6 templates)
-â”‚       â”‚   â””â”€â”€ prisma/             # PrismaService
-â”‚       â”œâ”€â”€ prisma/
-â”‚       â”‚   â”œâ”€â”€ schema.prisma       # 11 modelos
-â”‚       â”‚   â”œâ”€â”€ migrations/         # 6 migrations
-â”‚       â”‚   â””â”€â”€ seed.ts             # Seed de dados de risco + admin
-â”‚       â””â”€â”€ package.json
-â”‚
-â”œâ”€â”€ packages/
-â”‚   â””â”€â”€ shared/                     # Tipos e constantes compartilhados
-â”‚       â””â”€â”€ src/
-â”‚           â”œâ”€â”€ types/              # Interfaces TypeScript
-â”‚           â””â”€â”€ constants/          # Constantes do dominio
-â”‚
-â”œâ”€â”€ docs/                           # Documentacao completa
-â”‚   â”œâ”€â”€ project-brief.md            # Brief do projeto
-â”‚   â”œâ”€â”€ prd.md                      # PRD (14 FRs, 12 NFRs, 6 Epics)
-â”‚   â”œâ”€â”€ architecture.md             # Arquitetura full-stack
-â”‚   â”œâ”€â”€ front-end-spec.md           # Spec de UI/UX
-â”‚   â”œâ”€â”€ stories/                    # 18 story files
-â”‚   â””â”€â”€ relatorio-execucao-final.md # Relatorio final
-â”‚
-â”œâ”€â”€ docker-compose.yml              # PostgreSQL 16 + Redis 7
-â”œâ”€â”€ .env.example                    # Template de variaveis de ambiente
-â”œâ”€â”€ package.json                    # Root â€” npm workspaces
-â””â”€â”€ todo.md                         # Progresso de execucao
+ê¢âÅê¢ââ¬ê¢ââ¬ apps/
+ê¢ââ   ê¢âÅê¢ââ¬ê¢ââ¬ web/                        # Frontend Next.js 14 (porta 3000)
+ê¢ââ   ê¢ââ   ê¢âÅê¢ââ¬ê¢ââ¬ src/
+ê¢ââ   ê¢ââ   ê¢ââ   ê¢âÅê¢ââ¬ê¢ââ¬ app/                # App Router ê¢â¬â 15 rotas
+ê¢ââ   ê¢ââ   ê¢ââ   ê¢ââ   ê¢âÅê¢ââ¬ê¢ââ¬ page.tsx        # Landing page (SSR)
+ê¢ââ   ê¢ââ   ê¢ââ   ê¢ââ   ê¢âÅê¢ââ¬ê¢ââ¬ simulador/      # Simulador de risco por CEP
+ê¢ââ   ê¢ââ   ê¢ââ   ê¢ââ   ê¢âÅê¢ââ¬ê¢ââ¬ risco/          # Paginas SEO regionais (SSG)
+ê¢ââ   ê¢ââ   ê¢ââ   ê¢ââ   ê¢âÅê¢ââ¬ê¢ââ¬ cotacao/        # Wizard + comparador
+ê¢ââ   ê¢ââ   ê¢ââ   ê¢ââ   ê¢âÅê¢ââ¬ê¢ââ¬ checkout/       # Pagamento (Pix/Cartao)
+ê¢ââ   ê¢ââ   ê¢ââ   ê¢ââ   ê¢âÅê¢ââ¬ê¢ââ¬ confirmacao/    # Confirmacao de apolice
+ê¢ââ   ê¢ââ   ê¢ââ   ê¢ââ   ê¢âÅê¢ââ¬ê¢ââ¬ painel/         # Dashboard consumidor
+ê¢ââ   ê¢ââ   ê¢ââ   ê¢ââ   ê¢âÅê¢ââ¬ê¢ââ¬ corretor/       # Dashboard corretor
+ê¢ââ   ê¢ââ   ê¢ââ   ê¢ââ   ê¢âÅê¢ââ¬ê¢ââ¬ admin/          # Painel administrativo
+ê¢ââ   ê¢ââ   ê¢ââ   ê¢ââ   ê¢âÅê¢ââ¬ê¢ââ¬ login/          # Login
+ê¢ââ   ê¢ââ   ê¢ââ   ê¢ââ   ê¢âÅê¢ââ¬ê¢ââ¬ cadastro/       # Registro
+ê¢ââ   ê¢ââ   ê¢ââ   ê¢ââ   ê¢ââê¢ââ¬ê¢ââ¬ perfil/         # Perfil do usuario
+ê¢ââ   ê¢ââ   ê¢ââ   ê¢âÅê¢ââ¬ê¢ââ¬ components/         # Componentes React
+ê¢ââ   ê¢ââ   ê¢ââ   ê¢âÅê¢ââ¬ê¢ââ¬ services/           # API client layer (axios)
+ê¢ââ   ê¢ââ   ê¢ââ   ê¢âÅê¢ââ¬ê¢ââ¬ stores/             # Zustand (auth, quote)
+ê¢ââ   ê¢ââ   ê¢ââ   ê¢ââê¢ââ¬ê¢ââ¬ lib/                # Utilitarios
+ê¢ââ   ê¢ââ   ê¢âÅê¢ââ¬ê¢ââ¬ tailwind.config.ts
+ê¢ââ   ê¢ââ   ê¢ââê¢ââ¬ê¢ââ¬ package.json
+ê¢ââ   ê¢ââ
+ê¢ââ   ê¢ââê¢ââ¬ê¢ââ¬ api/                        # Backend NestJS 10 (porta 3001)
+ê¢ââ       ê¢âÅê¢ââ¬ê¢ââ¬ src/
+ê¢ââ       ê¢ââ   ê¢âÅê¢ââ¬ê¢ââ¬ common/             # Guards, decorators, filters
+ê¢ââ       ê¢ââ   ê¢ââ   ê¢âÅê¢ââ¬ê¢ââ¬ guards/         # JwtAuthGuard, RolesGuard
+ê¢ââ       ê¢ââ   ê¢ââ   ê¢ââê¢ââ¬ê¢ââ¬ decorators/     # @Public(), @Roles(), @CurrentUser()
+ê¢ââ       ê¢ââ   ê¢âÅê¢ââ¬ê¢ââ¬ modules/            # 10 modulos de negocio
+ê¢ââ       ê¢ââ   ê¢ââ   ê¢âÅê¢ââ¬ê¢ââ¬ health/         # GET /api/health
+ê¢ââ       ê¢ââ   ê¢ââ   ê¢âÅê¢ââ¬ê¢ââ¬ auth/           # Register, login, refresh
+ê¢ââ       ê¢ââ   ê¢ââ   ê¢âÅê¢ââ¬ê¢ââ¬ user/           # Perfil do usuario
+ê¢ââ       ê¢ââ   ê¢ââ   ê¢âÅê¢ââ¬ê¢ââ¬ risk/           # Simulador de risco por CEP
+ê¢ââ       ê¢ââ   ê¢ââ   ê¢âÅê¢ââ¬ê¢ââ¬ quotation/      # Motor de cotacao
+ê¢ââ       ê¢ââ   ê¢ââ   ê¢âÅê¢ââ¬ê¢ââ¬ payment/        # Pagamentos (Pix/Cartao)
+ê¢ââ       ê¢ââ   ê¢ââ   ê¢âÅê¢ââ¬ê¢ââ¬ policy/         # Emissao de apolices
+ê¢ââ       ê¢ââ   ê¢ââ   ê¢âÅê¢ââ¬ê¢ââ¬ broker/         # Plataforma do corretor
+ê¢ââ       ê¢ââ   ê¢ââ   ê¢âÅê¢ââ¬ê¢ââ¬ admin/          # Painel administrativo
+ê¢ââ       ê¢ââ   ê¢ââ   ê¢ââê¢ââ¬ê¢ââ¬ email/          # Notificacoes (6 templates)
+ê¢ââ       ê¢ââ   ê¢ââê¢ââ¬ê¢ââ¬ prisma/             # PrismaService
+ê¢ââ       ê¢âÅê¢ââ¬ê¢ââ¬ prisma/
+ê¢ââ       ê¢ââ   ê¢âÅê¢ââ¬ê¢ââ¬ schema.prisma       # 11 modelos
+ê¢ââ       ê¢ââ   ê¢âÅê¢ââ¬ê¢ââ¬ migrations/         # 6 migrations
+ê¢ââ       ê¢ââ   ê¢ââê¢ââ¬ê¢ââ¬ seed.ts             # Seed de dados de risco + admin
+ê¢ââ       ê¢ââê¢ââ¬ê¢ââ¬ package.json
+ê¢ââ
+ê¢âÅê¢ââ¬ê¢ââ¬ packages/
+ê¢ââ   ê¢ââê¢ââ¬ê¢ââ¬ shared/                     # Tipos e constantes compartilhados
+ê¢ââ       ê¢ââê¢ââ¬ê¢ââ¬ src/
+ê¢ââ           ê¢âÅê¢ââ¬ê¢ââ¬ types/              # Interfaces TypeScript
+ê¢ââ           ê¢ââê¢ââ¬ê¢ââ¬ constants/          # Constantes do dominio
+ê¢ââ
+ê¢âÅê¢ââ¬ê¢ââ¬ docs/                           # Documentacao completa
+ê¢ââ   ê¢âÅê¢ââ¬ê¢ââ¬ project-brief.md            # Brief do projeto
+ê¢ââ   ê¢âÅê¢ââ¬ê¢ââ¬ prd.md                      # PRD (14 FRs, 12 NFRs, 6 Epics)
+ê¢ââ   ê¢âÅê¢ââ¬ê¢ââ¬ architecture.md             # Arquitetura full-stack
+ê¢ââ   ê¢âÅê¢ââ¬ê¢ââ¬ front-end-spec.md           # Spec de UI/UX
+ê¢ââ   ê¢âÅê¢ââ¬ê¢ââ¬ stories/                    # 18 story files
+ê¢ââ   ê¢ââê¢ââ¬ê¢ââ¬ relatorio-execucao-final.md # Relatorio final
+ê¢ââ
+ê¢âÅê¢ââ¬ê¢ââ¬ docker-compose.yml              # PostgreSQL 16 + Redis 7
+ê¢âÅê¢ââ¬ê¢ââ¬ .env.example                    # Template de variaveis de ambiente
+ê¢âÅê¢ââ¬ê¢ââ¬ package.json                    # Root ê¢â¬â npm workspaces
+ê¢ââê¢ââ¬ê¢ââ¬ todo.md                         # Progresso de execucao
 ```
 
 ---
@@ -333,24 +333,24 @@ seg360/
 O banco PostgreSQL possui **11 modelos** gerenciados pelo Prisma ORM:
 
 ```
-â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”     â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”     â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
-â”‚   User   â”‚â”€â”€â”€â”€>â”‚ BrokerProfileâ”‚â”€â”€â”€â”€>â”‚   Lead   â”‚
-â”‚          â”‚     â”‚              â”‚â”€â”€â”€â”€>â”‚ Referral  â”‚
-â”‚          â”‚     â”‚              â”‚â”€â”€â”€â”€>â”‚Commission â”‚
-â”‚          â”‚     â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜     â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
-â”‚          â”‚
-â”‚          â”‚â”€â”€â”€â”€>â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”â”€â”€â”€â”€>â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
-â”‚          â”‚     â”‚  Quote   â”‚     â”‚  Policy  â”‚â”€â”€â”€â”€>â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
-â”‚          â”‚â”€â”€â”€â”€>â”‚          â”‚     â”‚          â”‚     â”‚ Payment  â”‚
-â”‚          â”‚     â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜     â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜     â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
-â”‚          â”‚
-â”‚          â”‚â”€â”€â”€â”€>â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
-â”‚          â”‚     â”‚ EmailLog â”‚
-â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜     â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+ê¢âÅê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢âÂ     ê¢âÅê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢âÂ     ê¢âÅê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢âÂ
+ê¢ââ   User   ê¢ââê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬>ê¢ââ BrokerProfileê¢ââê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬>ê¢ââ   Lead   ê¢ââ
+ê¢ââ          ê¢ââ     ê¢ââ              ê¢ââê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬>ê¢ââ Referral  ê¢ââ
+ê¢ââ          ê¢ââ     ê¢ââ              ê¢ââê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬>ê¢ââCommission ê¢ââ
+ê¢ââ          ê¢ââ     ê¢ââê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢âË     ê¢ââê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢âË
+ê¢ââ          ê¢ââ
+ê¢ââ          ê¢ââê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬>ê¢âÅê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢âÂê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬>ê¢âÅê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢âÂ
+ê¢ââ          ê¢ââ     ê¢ââ  Quote   ê¢ââ     ê¢ââ  Policy  ê¢ââê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬>ê¢âÅê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢âÂ
+ê¢ââ          ê¢ââê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬>ê¢ââ          ê¢ââ     ê¢ââ          ê¢ââ     ê¢ââ Payment  ê¢ââ
+ê¢ââ          ê¢ââ     ê¢ââê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢âË     ê¢ââê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢âË     ê¢ââê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢âË
+ê¢ââ          ê¢ââ
+ê¢ââ          ê¢ââê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬>ê¢âÅê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢âÂ
+ê¢ââ          ê¢ââ     ê¢ââ EmailLog ê¢ââ
+ê¢ââê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢âË     ê¢ââê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢âË
 
-â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
-â”‚ RiskData â”‚  (dados de risco por CEP â€” independente)
-â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+ê¢âÅê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢âÂ
+ê¢ââ RiskData ê¢ââ  (dados de risco por CEP ê¢â¬â independente)
+ê¢ââê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢âË
 ```
 
 | Modelo | Descricao | Campos-chave |
@@ -369,7 +369,7 @@ O banco PostgreSQL possui **11 modelos** gerenciados pelo Prisma ORM:
 
 ---
 
-## API â€” Endpoints
+## API ê¢â¬â Endpoints
 
 Base URL: `http://localhost:3001/api`
 
@@ -378,7 +378,7 @@ Base URL: `http://localhost:3001/api`
 | Metodo | Endpoint | Auth | Descricao |
 |--------|----------|------|-----------|
 | POST | `/auth/register` | Publico | Registro (email, password, name, role) |
-| POST | `/auth/login` | Publico | Login â€” retorna accessToken + refreshToken |
+| POST | `/auth/login` | Publico | Login ê¢â¬â retorna accessToken + refreshToken |
 | POST | `/auth/refresh` | Publico | Renovacao de token |
 
 ### Usuario
@@ -484,10 +484,10 @@ cd ../..
 ### Iniciar o desenvolvimento
 
 ```bash
-# Terminal 1 â€” Backend (porta 3001)
+# Terminal 1 ê¢â¬â Backend (porta 3001)
 cd apps/api && npm run dev
 
-# Terminal 2 â€” Frontend (porta 3000)
+# Terminal 2 ê¢â¬â Frontend (porta 3000)
 cd apps/web && npm run dev
 ```
 
@@ -583,32 +583,32 @@ cd apps/api && npx jest --testPathPattern=auth
 ### Arquitetura recomendada de producao
 
 ```
-Vercel (free tier)     â†’ apps/web (Next.js â€” SSR/SSG)
-Railway (free tier)    â†’ apps/api (NestJS â€” container)
-Neon (free tier)       â†’ PostgreSQL 16
-Upstash (free tier)    â†’ Redis 7
+Vercel (free tier)     ê¢â â apps/web (Next.js ê¢â¬â SSR/SSG)
+Railway (free tier)    ê¢â â apps/api (NestJS ê¢â¬â container)
+Neon (free tier)       ê¢â â PostgreSQL 16
+Upstash (free tier)    ê¢â â Redis 7
 ```
 
 ### Alternativa AWS (producao em escala)
 
 ```
-Vercel                 â†’ Frontend (CDN + Edge)
-AWS ECS Fargate        â†’ Backend (container)
-AWS RDS                â†’ PostgreSQL 16
-AWS ElastiCache        â†’ Redis 7
-AWS SES                â†’ Emails transacionais
-AWS S3                 â†’ PDFs de apolice
+Vercel                 ê¢â â Frontend (CDN + Edge)
+AWS ECS Fargate        ê¢â â Backend (container)
+AWS RDS                ê¢â â PostgreSQL 16
+AWS ElastiCache        ê¢â â Redis 7
+AWS SES                ê¢â â Emails transacionais
+AWS S3                 ê¢â â PDFs de apolice
 ```
 
 ### Variaveis de ambiente para deploy
 
 O frontend precisa apenas de:
-- `NEXT_PUBLIC_API_URL` â€” URL da API em producao
+- `NEXT_PUBLIC_API_URL` ê¢â¬â URL da API em producao
 
 O backend precisa de:
-- `DATABASE_URL` â€” Connection string do PostgreSQL
-- `REDIS_URL` â€” Connection string do Redis
-- `JWT_SECRET` / `JWT_REFRESH_SECRET` â€” Segredos para tokens (min 32 chars)
+- `DATABASE_URL` ê¢â¬â Connection string do PostgreSQL
+- `REDIS_URL` ê¢â¬â Connection string do Redis
+- `JWT_SECRET` / `JWT_REFRESH_SECRET` ê¢â¬â Segredos para tokens (min 32 chars)
 
 ---
 
@@ -634,12 +634,12 @@ NEXT_PUBLIC_APP_URL=http://localhost:3000
 # ViaCEP
 VIACEP_BASE_URL=https://viacep.com.br/ws
 
-# AWS SES (opcional em dev â€” emails sao logados no console)
+# AWS SES (opcional em dev ê¢â¬â emails sao logados no console)
 # AWS_SES_REGION=sa-east-1
 # AWS_ACCESS_KEY_ID=your-key
 # AWS_SECRET_ACCESS_KEY=your-secret
 
-# Payment Gateway (opcional em dev â€” mock ativo)
+# Payment Gateway (opcional em dev ê¢â¬â mock ativo)
 # ASAAS_API_KEY=your-asaas-api-key
 # ASAAS_WEBHOOK_SECRET=your-webhook-secret
 ```
@@ -671,14 +671,14 @@ VIACEP_BASE_URL=https://viacep.com.br/ws
 
 ### Proximos Passos
 
-- [ ] **Integracao real de pagamento** â€” Substituir mock por Asaas/Stripe/Mercado Pago
-- [ ] **Integracao real de insurtechs** â€” Substituir MockAdapter por APIs reais (Simple2u, 88i)
-- [ ] **Envio real de emails** â€” Integrar AWS SES ou SendGrid
-- [ ] **Testes E2E** â€” Cypress ou Playwright para fluxos criticos
-- [ ] **Deploy** â€” Vercel (frontend) + Railway (backend) + Neon (PostgreSQL)
-- [ ] **Cache Redis** â€” Implementar cache de cotacoes e dados de risco
-- [ ] **ESLint + Prettier** â€” Configurar regras compartilhadas no monorepo
-- [ ] **Monitoramento** â€” Sentry para error tracking
+- [ ] **Integracao real de pagamento** ê¢â¬â Substituir mock por Asaas/Stripe/Mercado Pago
+- [ ] **Integracao real de insurtechs** ê¢â¬â Substituir MockAdapter por APIs reais (Simple2u, 88i)
+- [ ] **Envio real de emails** ê¢â¬â Integrar AWS SES ou SendGrid
+- [ ] **Testes E2E** ê¢â¬â Cypress ou Playwright para fluxos criticos
+- [ ] **Deploy** ê¢â¬â Vercel (frontend) + Railway (backend) + Neon (PostgreSQL)
+- [ ] **Cache Redis** ê¢â¬â Implementar cache de cotacoes e dados de risco
+- [ ] **ESLint + Prettier** ê¢â¬â Configurar regras compartilhadas no monorepo
+- [ ] **Monitoramento** ê¢â¬â Sentry para error tracking
 
 ### Visao de Longo Prazo (Fase 2+)
 
@@ -714,11 +714,11 @@ Este e um projeto proprietario. Para contribuir:
 ---
 
 <p align="center">
-  <strong>Seg360</strong> â€” Protecao contra calamidades ao alcance de todos.
+  <strong>Seg360</strong> ê¢â¬â Protecao contra calamidades ao alcance de todos.
   <br/>
   Feito com TypeScript, cafe e a convicao de que todo brasileiro merece estar protegido.
 </p>
 
 ---
 
-Projeto adaptado da comunidade INEMA TDS - Marca Arckhe
+Projeto  - ARCKHÉe
